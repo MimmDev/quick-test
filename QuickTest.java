@@ -73,8 +73,8 @@ public class QuickTest extends JFrame {
                 this.words.add(lineWords);
                 line = reader.readLine();
             }
-
             reader.close();
+            Collections.shuffle(this.words);
         } catch(FileNotFoundException e) {
             e.printStackTrace();
         } catch(IOException e) {
