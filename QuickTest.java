@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
-public class Tester extends JFrame {
+public class QuickTest extends JFrame {
     private static final int WIDTH = 350;
     private static final int HEIGHT = 100;
     private static final Dimension dimension = new Dimension(WIDTH, HEIGHT);
@@ -16,8 +16,8 @@ public class Tester extends JFrame {
     private ArrayList<String[]> words;
     private int index;
 
-    public Tester() {
-        super("Tester");
+    public QuickTest() {
+        super("QuickTest");
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setPreferredSize(dimension);
@@ -119,7 +119,7 @@ public class Tester extends JFrame {
     }
 
     public static void main(String[] args) {
-        Tester test = new Tester();
+        QuickTest test = new QuickTest();
         test.setVisible(true);
         test.initData();
         test.start();
@@ -127,17 +127,17 @@ public class Tester extends JFrame {
 }
 
 class TestKeyboardInput extends KeyAdapter {
-    private Tester tester;
+    private QuickTest quickTest;
 
-    public TestKeyboardInput(Tester tester) {
-        this.tester = tester;
+    public TestKeyboardInput(QuickTest quickTest) {
+        this.quickTest = quickTest;
     }
 
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_LEFT: tester.previous(); break;
-            case KeyEvent.VK_RIGHT: tester.next(); break;
-            case KeyEvent.VK_ENTER: tester.check(); break;
+            case KeyEvent.VK_LEFT: quickTest.previous(); break;
+            case KeyEvent.VK_RIGHT: quickTest.next(); break;
+            case KeyEvent.VK_ENTER: quickTest.check(); break;
         }
     }
 }
