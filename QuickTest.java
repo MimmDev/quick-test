@@ -18,6 +18,12 @@ public class QuickTest extends JFrame {
 
     public QuickTest() {
         super("QuickTest");
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setPreferredSize(dimension);
